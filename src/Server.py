@@ -17,15 +17,6 @@ cursor = conn.cursor()
 app = Flask(__name__)
 
 
-messages = [
-    {"name" : "Akiko", "time" : time.time(), "text": "123"},
-    {"name" : "Akiko", "time" : time.time(), "text": "1234"}
-    ]
-users = {
-    "Akiko" : "12345",
-    "Cat-bot" : "111"
-    }
-
 def get_password(name):
     cursor.execute("select Password from Users where Username='%s'" % name)
     try:
